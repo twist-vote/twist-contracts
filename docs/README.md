@@ -13,7 +13,7 @@ Pools aggregate voting power from multiple stakers into one contract. That votin
 
 ### Pool Architecture
 
-![image](./docs/images/Pool.png)
+![image](./images/Pool.png)
 
 ## Pots
 
