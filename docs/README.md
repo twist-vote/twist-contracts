@@ -13,7 +13,7 @@ Pools aggregate voting power from multiple stakers into one contract. That votin
 
 ### Pool Architecture
 
-![image](https://raw.githubusercontent.com/bribeprotocol/bribe-v2/main/docs/images/Pool.png?token=GHSAT0AAAAAABOWRQDWHIMUVQJ5CC7I6AYMYSOXKIQ)
+![image](https://raw.githubusercontent.com/bribeprotocol/bribe-v2/main/docs/images/Pool.png?token=GHSAT0AAAAAABOWRQDWBHT4FFNICFAYNKJAYSOY5OA)
 
 ## Pots
 
