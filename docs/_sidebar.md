@@ -1,6 +1,6 @@
 - [What is Bribe ?](README.md)
 
-- [Overview](Overview.md)
+- [Pots overview](pots.md)
 
 - Guide
 
