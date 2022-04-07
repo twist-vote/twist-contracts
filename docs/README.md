@@ -4,38 +4,30 @@ Bribe creates DAO infrastructure tooling to reward protocol participation. We ai
 
 Bribe protocol is made of 2 main products:
 
-- Pools
 - Pots
-
-## Pools
-
-Pools aggregate voting power from multiple stakers into one contract. That voting power can later on be bribed in order to create proposals and/or vote on proposals.
-
-### Pool Architecture
-
-![image](https://raw.githubusercontent.com/bribeprotocol/bribe-v2/main/docs/images/Pool.png?token=GHSAT0AAAAAABOWRQDXSEJEJRZ7J62PYZTMYSOY7ZA)
+- Pools
 
 ## Pots
 
-Bribe is offering an incentive marketplace in the form of pots.
+Pots are incentives applied to proposals either onchain or offchain ([Snapshot](https://snapshot.org)).  
+Imagine a proposal that has 2 possible outcome, ie accepted or rejected. A pot can be created for this proposal, this pot will accept incentives for both outcome.  
+Anyone can deposit an amount of token for either of these outcome, ie if 10 accounts deposit 100 Bribes to the accepted outcome, Voters who voted for this outcome (accepted) will have 1000 Bribe available for claim.
 
-Pots are airdrop that are built out of users behaviour.
+## Pools
 
-For example: A new protocol want to incentivize new users to try it.
+Pools aggregate voting power from multiple stakers into one contract.  
+Pools offer a stake and forget service to stakers, Bribe bots will oversee existing pots and direct pool votes in order to extract the most rewards for stakers.
+Pools voting power can also be used to create proposals onchain, ie Aave requires 80,000 Aave in order to pass proposal onchain. A few wallets can provide that amount of token, by aggregating aave tokens from multiple account into one contract, pools will eventually be able to create proposals in exchange for a fee defined by stakers. We could have a scenario where someone would pay ~10,000 Bribe to stakers to pass a proposal onchain.
 
-- The team will usually promise an airdrop, the condition for the airdrop are unknown, when is the snapshot happening? how are shares distributed? What will be the total amount?
-- That team could instead submit an incentive on the Bribe pots marketplace, defining the airdrop conditions.
-- It will enter the SC address that needs incentives, ABI is fetched from that contract, it will then select an event from that ABI and describe which parameters needs to be completed to be elligible for this airdrop.
-- Enter a description for this airdrop, the total amount of token to be distributed and an expiration date after which the airdrop will be built and distributed by Bribe bots.
-- Eventually exclude some addresses.
+## Bots
 
-Such implementation is powerful because it opens permissionless incentives both for instigator and instigated.
+Bots are server provided by the Bribe DAO. They are a central entity to bribe.  
+Bots have 3 important responsabilities in the protocol:
 
-Because Bribe pots is designed as a marketplace, anyone can visit the pots page and see where he is elligible for rewards. An account can claim its rewards all at once, receiving a range of token.
+- automate voting accross pools by overseeing pots incentives. ie if an incentive exist for the accepted outcome on a snapshot proposal, the bots will automatically use the voting power on the according pool and vote "yes" to make all stakers in this pool elligible for the reward.
+- automate merkleroot generation, to make pots rewards claimable by voters, an airdrop needs to be created. Bots oversee all voters on a proposal and will create the merkleroot accordingly to make it possible for each voters to claim their fair amount of rewards.
+- automate pot rewards accumulation on the gauge contract aka claim on the pots and send the amount to the gauge for pool stakers to reclaim their rewards amount later on.
 
-### Features
+### Bribe Architecture
 
-- To create a pots, point to a proposal ID and an executing contract.
-- Assign a bounty to an action that needs to be taken on-chain
-- Assign an expiration time to the pots, after what the bounty will be claimable by the addresses that have executed the underlying action.
-- Eventually blacklist some addresses from your bounty program
+![image](https://raw.githubusercontent.com/bribeprotocol/bribe-v2/main/docs/images/Pool.png?token=GHSAT0AAAAAABOWRQDXSEJEJRZ7J62PYZTMYSOY7ZA)
