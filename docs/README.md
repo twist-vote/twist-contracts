@@ -30,4 +30,4 @@ Bots have 3 important responsabilities in the protocol:
 
 ### Bribe Architecture
 
-![image](https://raw.githubusercontent.com/bribeprotocol/bribe-v2/main/docs/images/Pool.png?token=GHSAT0AAAAAABOWRQDXSEJEJRZ7J62PYZTMYSOY7ZA)
+![image](https://raw.githubusercontent.com/bribeprotocol/bribe-v2/main/docs/images/bribe-diagram.png?token=GHSAT0AAAAAABOWRQDXC67OTQKH3BTYIMXAYSX6DJQ)
