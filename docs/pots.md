@@ -8,7 +8,7 @@ Bribe pots is a generalized incentive mecanism. Pots are designed to incentivize
 - Each pots created can manage multiple airdrop/incentive, listing them by id, this id is an integer.
 - Pots and incentives are not permissionless, they can only be created by an admin.
 - Pots are not free to use, fees are collected. Fees are collected if the incentive is successful when rewards are claimed, but also if the incentive is cancelled, when depositted bounty asset are withdrawn.
-- Pots deposited amount can be withdrawn, only if no merkleroot has been uploaded before the expiration date (pots status is expired)
+- Pots deposited amount can be withdrawn, only if no merkleroot has been submitted before the expiration date (pots status is expired)
 - Incentive can be blocked by the admin, when an incentive is blocked, depositors are refunded.
 - Incentive needs a minimum amount deposited to be created.
 - All Incentive under one pot have the same lifetime, no matter the incentive. The incentive lifetime ends when a merkleroot is submitted, after which elligible voters have 30 days to claim their rewards.
