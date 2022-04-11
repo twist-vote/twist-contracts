@@ -8,11 +8,12 @@ Bribe pots is a generalized incentive mecanism. Pots are designed to incentivize
 - Each pots created can manage multiple airdrop/incentive, listing them by id, this id is an integer.
 - Pots and incentives are not permissionless, they can only be created by an admin.
 - Pots are not free to use, fees are collected. Fees are collected if the incentive is successful when rewards are claimed, but also if the incentive is cancelled, when depositted bounty asset are withdrawn.
+- Pots deposited amount can be withdrawn, only if no merkleroot has been uploaded before the expiration date (pots status is expired)
 - Incentive can be blocked by the admin, when an incentive is blocked, depositors are refunded.
 - Incentive needs a minimum amount deposited to be created.
-- All Incentive under one pot have the same lifetime, no matter the incentive. So each incentive under qiDao will be created for the same amount of time, no matter the nature of the incentive.
-- Merkle proof are updated by an admin, when the incentive lifetime has expired.
-- Each alligible account for an incentive has 30 days to claims the bounty rewards. After which bounty is blocked and can only be claimed by depositors.
+- All Incentive under one pot have the same lifetime, no matter the incentive. The incentive lifetime ends when a merkleroot is submitted, after which elligible voters have 30 days to claim their rewards.
+- Merkle proof are updated by an admin, before the incentive expiration date, changing incentive status from active to executed
+- Each alligible account for an incentive has 30 days to claims the rewards. After which rewards is blocked and can only be claimed by the bribe protocol.
 - Each incentive can have multiple incentivizers but only one bounty asset, ie one incentive created can have its bounty amount increased by different accounts, however the token used for this bounty is unique and shared by all incentive in the same pots (qidao pots will always use the same bid asset, for all its incentive).
 - Each incentive can support an infinite number of outputs, output are caracterized by integers, eg for a bilateral proposal, output 0 is yay, output 1 is nay.
 
