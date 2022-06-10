@@ -1,0 +1,22 @@
+[default]
+solc_version = "0.8.13"
+src = 'src'
+out = 'artifacts'
+libs = ['node_modules', "lib"]
+optimizer = true
+optimizer_runs = 200
+# eth-rpc-url = "https://foundry.thibautduchene.fr"
+remappings = [
+    '@aave/=node_modules/@aave/',
+    '@ensdomains/=node_modules/@ensdomains/',
+    '@openzeppelin/=node_modules/@openzeppelin/',
+    'arb-bridge-eth/=node_modules/arb-bridge-eth/',
+    'arb-bridge-peripherals/=node_modules/arb-bridge-peripherals/',
+    'arbos-precompiles/=node_modules/arbos-precompiles/',
+    'eth-gas-reporter/=node_modules/eth-gas-reporter/',
+    'hardhat-deploy/=node_modules/hardhat-deploy/',
+    'hardhat/=node_modules/hardhat/',
+    # 'lib/=node_modules/@aave/aave-stake/contracts/lib/',
+]
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
